@@ -16,9 +16,9 @@ import { User } from '@core';
 })
 
 export class CalendarService {
-  private readonly API_URL = 'http://localhost:3000/auth';
-  private readonly API_URL1 = 'http://localhost:3000/holidays';
-  private readonly API_URL2 = 'http://localhost:3000/attendance';
+  private readonly API_URL = 'https://hostapp-8mxk.onrender.com/auth';
+  private readonly API_URL1 = 'https://hostapp-8mxk.onrender.com/holidays';
+  private readonly API_URL2 = 'https://hostapp-8mxk.onrender.com/attendance';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

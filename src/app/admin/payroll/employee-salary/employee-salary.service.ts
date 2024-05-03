@@ -8,7 +8,7 @@ import { UnsubscribeOnDestroyAdapter } from '@shared';
   providedIn: 'root',
 })
 export class EmployeeSalaryService extends UnsubscribeOnDestroyAdapter {
-   baseUrl = 'http://localhost:3000/payroll';
+   baseUrl = 'https://hostapp-8mxk.onrender.com/payroll';
   isTblLoading = true;
   dataChange: BehaviorSubject<EmployeeSalary[]> = new BehaviorSubject<
     EmployeeSalary[]
@@ -31,7 +31,7 @@ export class EmployeeSalaryService extends UnsubscribeOnDestroyAdapter {
   }
   getAllPayrollsWithUsersAndPoste(): void {
     this.subs.sink = this.httpClient
-      .get<EmployeeSalary[]>('http://localhost:3000/payroll/withUsersAndPoste')
+      .get<EmployeeSalary[]>('https://hostapp-8mxk.onrender.com/payroll/withUsersAndPoste')
       .subscribe({
         next: (data) => {
           this.isTblLoading = false;

@@ -10,7 +10,7 @@ import { IMessage } from './IMessage.interface';
 })
 export class NotifcationServiceService {
 
-  private apiUrl = 'http://localhost:3000/notification';  // Adjust this URL to match your actual API endpoint
+  private apiUrl = 'https://hostapp-8mxk.onrender.com/notification';  // Adjust this URL to match your actual API endpoint
 
   constructor(private http: HttpClient) {}
 

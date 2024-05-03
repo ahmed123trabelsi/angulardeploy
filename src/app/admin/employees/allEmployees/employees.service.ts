@@ -9,7 +9,7 @@ import { UnsubscribeOnDestroyAdapter } from '@shared';
 })
 export class EmployeesService extends UnsubscribeOnDestroyAdapter {
   
-  private apiUrl = 'http://localhost:3000/auth'; 
+  private apiUrl = 'https://hostapp-8mxk.onrender.com/auth'; 
 
   isTblLoading = true;
   dataChange: BehaviorSubject<Employees[]> = new BehaviorSubject<Employees[]>(
@@ -60,11 +60,11 @@ export class EmployeesService extends UnsubscribeOnDestroyAdapter {
     console.log(id);
   }
   getImageById(_id: string): Observable<Blob> {
-    return this.httpClient.get('http://localhost:3000/auth/uplo/' + _id, { responseType: 'blob' });
+    return this.httpClient.get('https://hostapp-8mxk.onrender.com/auth/uplo/' + _id, { responseType: 'blob' });
   }
 
   getImage(imageId: string): Observable<Blob> {
-    return this.httpClient.get<Blob>(`http://localhost:3000/auth/${imageId}`, { responseType: 'blob' as 'json' });
+    return this.httpClient.get<Blob>(`https://hostapp-8mxk.onrender.com/auth/${imageId}`, { responseType: 'blob' as 'json' });
   }
   activateUser(userId: string): Observable<Employees> {
     const body = { userId };

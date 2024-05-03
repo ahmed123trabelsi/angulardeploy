@@ -76,7 +76,7 @@ private retrieveUserName(): string {
 
 
   getPayslipData(payrollId: string) {
-    this.http.get<any>('http://localhost:3000/payroll/getPayrollWithPayP/' + payrollId)
+    this.http.get<any>('https://hostapp-8mxk.onrender.com/payroll/getPayrollWithPayP/' + payrollId)
       .subscribe(
         (response) => {
           this.payslipData = response;

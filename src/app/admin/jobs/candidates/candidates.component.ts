@@ -75,7 +75,7 @@ export class CandidatesComponent
   id?: string;
   candidates?: Candidates;
   jobTitles: { [key: string]: string } = {}; 
-  baseUrl: string = 'http://localhost:3000/files'; // URL de base de votre serveur
+  baseUrl: string = 'https://hostapp-8mxk.onrender.com/files'; // URL de base de votre serveur
   c!: number; // Déclaration de la variable i
   rol!: Candidates; 
   constructor(
@@ -377,8 +377,8 @@ export class ExampleDataSource extends DataSource<Candidates> {
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });
           this.filteredData.forEach(candidate => {
-            if (!candidate.cv.startsWith('http://localhost:3000/files/uploads')) {
-              candidate.cv = `http://localhost:3000/files/${candidate.cv}`;
+            if (!candidate.cv.startsWith('https://hostapp-8mxk.onrender.com/files/uploads')) {
+              candidate.cv = `https://hostapp-8mxk.onrender.com/files/${candidate.cv}`;
             }
           });  
         // Sort filtered data

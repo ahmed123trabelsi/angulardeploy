@@ -8,7 +8,7 @@ import { UnsubscribeOnDestroyAdapter } from '@shared';
   providedIn: 'root',
 })
 export class TodayService extends UnsubscribeOnDestroyAdapter {
-  private readonly API_URL = 'http://localhost:3000/Conge';
+  private readonly API_URL = 'https://hostapp-8mxk.onrender.com/Conge';
   isTblLoading = true;
   dataChange: BehaviorSubject<Today[]> = new BehaviorSubject<Today[]>([]);
   // Temporarily stores data from dialogs

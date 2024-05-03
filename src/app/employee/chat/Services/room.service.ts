@@ -6,7 +6,7 @@ import { Room } from '../Models/room';
   providedIn: 'root'
 })
 export class RoomService {
-  apiUrl = 'http://localhost:3000/api/'
+  apiUrl = 'https://hostapp-8mxk.onrender.com/api/'
 
   constructor(private http: HttpClient) { }
 
