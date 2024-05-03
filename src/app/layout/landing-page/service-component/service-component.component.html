@@ -1,0 +1,87 @@
+<div mat-dialog-content class="dialog-container">
+  <div class="addContainer">
+      <div class="modalHeader">
+        <div class="editRowModal">
+          <div class="modalHeader clearfix">
+            <div class="modal-about">
+              {{dialogTitle}}
+            </div>
+          </div>
+        </div>
+        <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div mat-dialog-content>
+      <form (ngSubmit)="generatePdf()">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+            <mat-form-field>
+              <mat-label>Nom</mat-label>
+              <input matInput type="text" name="nom" [(ngModel)]="cvData.nom" placeholder="Nom">
+            </mat-form-field>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+            <mat-form-field>
+          <mat-label>Job</mat-label>
+          <input matInput type="text" name="prenom" [(ngModel)]="cvData.job" placeholder="Job">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+        <mat-form-field>
+          <mat-label>Phone1</mat-label>
+          <input matInput type="number" name="phone1" [(ngModel)]="cvData.phone1" placeholder="Phone1">
+        </mat-form-field>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+
+        <mat-form-field>
+          <mat-label>Adresse</mat-label>
+          <input matInput type="text" name="phone2" [(ngModel)]="cvData.Adresse" placeholder="Adresse">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+
+        <mat-form-field>
+          <mat-label>Adresse e-mail</mat-label>
+          <input matInput type="email" name="email" [(ngModel)]="cvData.email" placeholder="Adresse e-mail">
+        </mat-form-field>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+
+        <mat-form-field>
+          <mat-label>Education</mat-label>
+          <input matInput type="text" name="education" [(ngModel)]="cvData.educations" placeholder="Education">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+        <mat-form-field>
+          <mat-label>Compétences</mat-label>
+          <input matInput type="text" name="Competence" [(ngModel)]="cvData.competences" placeholder="Compétences">
+        </mat-form-field>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+
+        <mat-form-field>
+          <mat-label>Profile</mat-label>
+          <textarea matInput name="profile" [(ngModel)]="cvData.profile" placeholder="Profile"></textarea>
+      </mat-form-field>
+    </div>
+    </div>
+        <button class="justify-content-center" mat-raised-button color="primary" type="submit">Générer CV PDF</button>
+      </form>
+      
+      <div *ngIf="pdfBlob">
+        <a [href]="downloadPdf()" download="cv.pdf">Télécharger CV PDF</a>
+    </div>
+        
+      </div>
+    </div>
+  </div>
