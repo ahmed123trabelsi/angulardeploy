@@ -116,11 +116,11 @@ export class EmployeeProfileComponent implements OnInit  {
         // Utilisez this.selectedFile au lieu de this.selectedFile.name
         this.emploueeS.uploadImage(userId, this.selectedFile).subscribe({
           next: (res) => {
-            console.log("response",res);
+          
             const imageemit=res.profileImage;
             // Le téléchargement de l'image a réussi, vous pouvez traiter la réponse ici
             const imageUrl = res.imageUrl; 
-            console.log("upload",imageUrl);
+          
             
             let user =userData.user;
             // Supposons que votre API renvoie l'URL de l'image téléchargée
@@ -136,8 +136,7 @@ export class EmployeeProfileComponent implements OnInit  {
             });
           },
           error: (error) => {
-            // Gérez les erreurs de téléchargement de l'image ici
-            console.error('Error uploading image:', error);
+           
           },
         });
       } else {

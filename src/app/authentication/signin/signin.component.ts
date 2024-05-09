@@ -92,18 +92,18 @@ export class SigninComponent
             // Redirection vers le tableau de bord de l'administrateur
             this.router.navigate(['/admin/dashboard']);
           } else {
-            console.error(`Rôle d'utilisateur invalide : ${user.role}`);
+      
             // Gérez le cas où le rôle de l'utilisateur n'est pas reconnu
           }
           } catch (error) {
-          console.error('Erreur lors du décodage du cookie:', error);
+          
           }
         } else {
-          console.error('Le cookie "user_data" n\'est pas défini');
+      
         }
       },
       (error) => {
-        console.error('Erreur lors de la connexion:', error);
+  
         Swal.fire({
           icon: 'error',
           title: 'Erreur de connexion',

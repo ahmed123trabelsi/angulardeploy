@@ -80,7 +80,7 @@ export class MyProjectsComponent
           this.user = userData.user; // Store user data in the component's variable
           this.auth.getUserById(this.user.id).subscribe((userData) => {
             this.userfinded = userData;
-            console.log('User data:', this.userfinded);
+          
             
             if (this.userfinded?.tasks && Array.isArray(this.userfinded.tasks)) {
               // Assuming tasks is an array, we extract the _id of each task
@@ -88,23 +88,22 @@ export class MyProjectsComponent
               
               this.projectService.getProjectsByTaskIds(taskIds).subscribe((projectsData) => {
                 this.projects = projectsData;
-                console.log('Projects:', this.projects);
+               
               }, (error) => {
-                // It's a good practice to handle potential errors in subscriptions
-                console.error('Error fetching projects:', error);
+              
               });
             } else {
-              console.log('No tasks found for this user or tasks structure is unexpected');
+       
             }
           }, (error) => {
-            console.error('Error fetching user data:', error);
+      
           });
           
         } catch (error) {
-          console.error('Error decoding cookie:', error);
+        
         }
       } else {
-        console.error('Cookie "user_data" is not set');
+  
       }
     }
     

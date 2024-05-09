@@ -61,14 +61,14 @@ ajouterCompetence() {
 }
   
 generatePdf(): void {
-  console.log('Données du CV avant génération PDF : ', this.cvData);
+
   const imageUrl = this.selectedImage ? URL.createObjectURL(this.selectedImage) : '';
-  console.log('Image URL:', imageUrl);
+
   this.candidatesService.generateCv({...this.cvData, selectedImage: imageUrl}).subscribe((pdfBlob: Blob) => {
-    console.log('PDF généré avec succès : ', pdfBlob);
+   
     this.pdfBlob = pdfBlob;
   }, (error : any) => {
-    console.error('Erreur lors de la génération PDF : ', error);
+
   });
 }
   

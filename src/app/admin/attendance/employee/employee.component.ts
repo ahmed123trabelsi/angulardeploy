@@ -96,7 +96,7 @@ export class EmployeeComponent implements OnInit {
       
       
       error => {
-        console.error('Erreur lors de la récupération des utilisateurs avec congé :', error);
+   
       }
     );
 
@@ -155,7 +155,7 @@ export class EmployeeComponent implements OnInit {
                     Swal.fire('Succès', 'L\'événement a été approuvé avec succès !', 'success');
                     
                 }, error => {
-                    console.error('Erreur lors de l\'approbation de l\'événement :', error);
+                  
                     Swal.fire('Erreur', 'Une erreur s\'est produite lors de l\'approbation de l\'événement.', 'error');
                 });
             } else if (result.dismiss === Swal.DismissReason.cancel) {
@@ -165,14 +165,14 @@ export class EmployeeComponent implements OnInit {
 
                     Swal.fire('Succès', 'L\'événement a été refusé avec succès !', 'success');
                 }, error => {
-                    console.error('Erreur lors du refus de l\'événement :', error);
+                 
                     Swal.fire('Erreur', 'Une erreur s\'est produite lors du refus de l\'événement.', 'error');
                 });
             }
         });
 
     } else {
-        console.error('ID de l\'utilisateur non trouvé dans la description.');
+      
     }
 }
 }

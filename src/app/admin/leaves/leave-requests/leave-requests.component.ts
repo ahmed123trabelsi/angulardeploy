@@ -118,7 +118,7 @@ export class LeaveRequestsComponent
   accepterDemande(id: string): void {
     this.leavesService.accepterDemandeConge(id).subscribe(
       (leave: Leaves) => {
-        console.log(leave);
+    
         const id1 ="660f83cd8d1bfc8173f09d51";
         const message = 'Votre demande de congé a été acceptée.';
       },
@@ -223,8 +223,7 @@ export class ExampleDataSource extends DataSource<Leaves> {
         return this.leaveS.getAllUserswithconge();
       }),
       map((data: User[]) => {
-        // Flatten the data and include the user name in each leave
-        console.log("reeee" , data)
+       
         const leaves: Leaves[] = [];
         data.forEach(user => {
           const id = user._id;

@@ -43,7 +43,7 @@ export class LandingPageComponent implements AfterViewInit , OnInit   {
           chatbox.classList.toggle('chatbox--active'); 
       });
     } else {
-      console.error('Unable to find chatbox or openChatboxBtn elements.');
+
     }
   }
   ngOnInit(): void {
@@ -52,11 +52,11 @@ export class LandingPageComponent implements AfterViewInit , OnInit   {
     });
     this.jobservice.getJobs().subscribe(
       (jobs: any[]) => {
-        console.log(jobs)
+     
         this.jobsList = jobs; // Assurez-vous que votre service renvoie la liste des emplois
       },
       (error) => {
-        console.error('Error fetching jobs:', error);
+     
       }
     );
   }
@@ -77,7 +77,7 @@ sendMessage() {
       // Réinitialiser le champ de saisie après l'envoi du message
       newMessageControl.reset();
     }, error => {
-      console.error('Error:', error);
+   
     });
   }
   

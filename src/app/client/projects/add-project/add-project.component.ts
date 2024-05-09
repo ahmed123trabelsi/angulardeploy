@@ -84,10 +84,10 @@ export class AddprojectsComponent {
         this.iduser = userData.user.id; // Store user data in the component's variable
       
       } catch (error) {
-        console.error('Error decoding cookie:', error);
+      
       }
     } else {
-      console.error('Cookie "user_data" is not set');
+   
     }
   }
   addProject(){
@@ -103,7 +103,7 @@ export class AddprojectsComponent {
   
     // Convert priority to a number if it's not already
   
-    console.log('jj',formattedValues);
+  
     this.projectService.createProject(formattedValues).subscribe(
       () => {
     

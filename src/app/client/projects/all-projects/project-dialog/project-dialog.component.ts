@@ -141,7 +141,7 @@ export class ProjectDialogComponent {
 
   }
   public save(): void {
-    console.log('save');
+  
     if (!this.projectForm.valid) {
       return;
     }
@@ -170,9 +170,7 @@ export class ProjectDialogComponent {
    
       };
     
-      // Convert priority to a number if it's not already
-    
-      console.log(formattedValues);
+  
       this.projectService.createProject(formattedValues).subscribe(
         (newProject) => {
       

@@ -74,7 +74,7 @@ export class FormdialogComponentComponent implements OnInit {
     this.contactForm = this.createContactForm();
     this.jobId = data.jobId;
     this.jobTitle = data.jobTitle;
-    console.log('Job Title:', this.jobTitle);
+   
   }
  
   formControl = new UntypedFormControl('', [
@@ -143,7 +143,7 @@ onJobSelect(jobId: string): void {
         this.jobs = jobs.filter(job => job.status === 'Open');
       },
       (error) => {
-        console.error('Error fetching jobs:', error);
+
       }
     );
   }
@@ -160,7 +160,7 @@ onJobSelect(jobId: string): void {
 //   public confirmAdd(): void {
 //     if (this.contactForm && this.contactForm.valid && this.cvFile) {
 //       const jobId = this.contactForm.get('jobId')!.value;
-//       console.log('Job ID:', jobId);
+
 //       if (jobId) { // Vérifiez si l'ID du job est défini
 //         const formData = new FormData();
 //         formData.append('candidateName', this.contactForm.get('candidateName')!.value);
@@ -189,7 +189,7 @@ onJobSelect(jobId: string): void {
 public confirmAdd(): void {
   if (this.contactForm && this.contactForm.valid && this.cvFile) {
     const jobId = this.contactForm.get('jobId')!.value;
-    console.log('Job ID:', jobId);
+
     if (jobId) { // Vérifiez si l'ID du job est défini
       const formData = new FormData();
       formData.append('candidateName', this.contactForm.get('candidateName')!.value);
@@ -200,7 +200,7 @@ public confirmAdd(): void {
       // Appelez la méthode d'ajout du service avec les données du formulaire
       this.candidatesService.applyforjob(formData).subscribe(
         (response) => {
-          console.log('Application submitted successfully:', response);
+     
           Swal.fire({
             icon: 'success',
             title: 'Success!',
@@ -212,7 +212,7 @@ public confirmAdd(): void {
           });
         },
         (error) => {
-          console.error('Error submitting application:', error);
+      
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -222,7 +222,7 @@ public confirmAdd(): void {
         }
       );
     } else {
-      console.error('Error: Job ID is null');
+
       Swal.fire({
         icon: 'error',
         title: 'Oops...',

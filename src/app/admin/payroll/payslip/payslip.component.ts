@@ -56,7 +56,7 @@ export class PayslipComponent {
         window.open(fileURL);
       },
       (error) => {
-        console.error('Erreur lors de la génération du PDF:', error);
+     
       }
     );
   }
@@ -82,7 +82,7 @@ private retrieveUserName(): string {
           this.payslipData = response;
         },
         (error) => {
-          console.error('Error fetching payslip data:', error);
+      
         }
       );
   }

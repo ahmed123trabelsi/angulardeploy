@@ -62,8 +62,7 @@ export class AddDepartementComponent {
       const companyData = this.docForm.value;
       this.companyService.addDepartement(companyData).subscribe(
         response => {
-          // Gérer la réponse du backend après l'ajout de l'entreprise
-          console.log('Company added successfully!', response);
+       
           // Réinitialisez le formulaire après l'ajout réussi
           this.docForm.reset();
           // Afficher une alerte avec SweetAlert
@@ -74,8 +73,7 @@ export class AddDepartementComponent {
           });
         },
         error => {
-          // Gérer les erreurs de l'ajout d'entreprise
-          console.error('Error adding company:', error);
+       
           // Afficher une alerte d'erreur avec SweetAlert
           Swal.fire({
             icon: 'error',
@@ -85,8 +83,7 @@ export class AddDepartementComponent {
         }
       );
     } else {
-      // Affichez les erreurs de validation du formulaire
-      console.log('Invalid form data');
+   
       // Afficher une alerte avec SweetAlert pour les données de formulaire invalides
       Swal.fire({
         icon: 'error',

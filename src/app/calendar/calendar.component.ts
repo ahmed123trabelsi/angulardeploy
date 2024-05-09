@@ -161,7 +161,7 @@ import Swal from 'sweetalert2';
     customDayCellDidMount(dayRenderInfo: any): void {
         const date = dayRenderInfo.date;
         const isHoliday = this.holidays.some(event => moment(event.date).isSame(date, 'day') && event.backgroundColor === 'red')
-        console.log(isHoliday);
+      
       // Colorer en rouge les jours fériés
       if (isHoliday) {
         dayRenderInfo.el.style.backgroundColor = 'red';
@@ -177,7 +177,7 @@ import Swal from 'sweetalert2';
     }  
 
     mapUserEvents(userData: Calendar[]): any[] {
-      console.log(userData); 
+  
       return userData.map(item => ({
         title: item.status ,// Ajuster le titre en fonction de l'état
         date: item.date  , // Inclure la date pour chaque événement

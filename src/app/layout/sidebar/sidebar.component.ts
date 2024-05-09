@@ -84,8 +84,7 @@ export class SidebarComponent
         }
       },
       error: (error) => {
-        // Gérez les erreurs de téléchargement de l'image ici
-        console.error('Error uploading image:', error);
+ 
       },
     });
   }
@@ -118,8 +117,7 @@ export class SidebarComponent
 
   ngOnInit() {
     this.imageUpdatedSubscription = this.imageService.imageUpdated$.subscribe((imageUrl: string) => {
-      // Mettez à jour l'image avec l'URL reçu de l'événement
-      console.log("imgurl",imageUrl);
+   
       this.userImg = imageUrl;
     });
     const token = this.cookieS.get('token'); // Obtenez le token depuis le cookie
@@ -128,7 +126,7 @@ export class SidebarComponent
       // Utilisez le token pour récupérer les données de l'utilisateur
       this.employeS.getUserByToken(token).subscribe(
         (userData: any) => {
-          console.log(userData); // Affichez userData pour vérification
+    
   
           // Mettez à jour les données de l'utilisateur avec les données obtenues
           const userRole = userData.role; // Accès direct aux rôles de l'utilisateur
@@ -152,11 +150,11 @@ export class SidebarComponent
           }
         },
         (error) => {
-          console.error('Erreur lors de la récupération des données utilisateur:', error);
+       
         }
       );
     } else {
-      console.error('Le cookie "token" n\'est pas défini');
+    
     }
   
     this.initLeftSidebar();

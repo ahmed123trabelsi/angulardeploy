@@ -306,7 +306,7 @@ export class LeadsComponent
       a.click();
       document.body.removeChild(a);
     }, error => {
-      console.error('Erreur lors du téléchargement du fichier :', error);
+    
     });
   }
 

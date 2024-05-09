@@ -112,7 +112,7 @@ _id!:any
       
       },
       error: (error) => {
-        console.error('Il y a eu une erreur lors de la récupération des tâches :', error);
+     
       }
     });
     
@@ -155,7 +155,7 @@ this.ngOnInit()
       direction: tempDirection,
     });
     this.subs.sink =  dialogRef.afterClosed().subscribe(result => {
-      console.log('Le dialogue a été fermé.', result);
+   
       if (result) {
        
 

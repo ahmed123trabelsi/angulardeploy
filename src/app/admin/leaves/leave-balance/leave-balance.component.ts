@@ -75,7 +75,7 @@ export class LeaveBalanceComponent
     this.loadData();
   }
   toggleStar(row: LeaveBalance) {
-    console.log(row);
+
   }
 
   public loadData() {

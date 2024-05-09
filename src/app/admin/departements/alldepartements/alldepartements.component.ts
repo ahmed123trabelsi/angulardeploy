@@ -174,7 +174,7 @@ export class AlldepartementsComponent
   deleteItem(i: number, row: Departement) {
     this.index = i;
     this.id = row._id;
-    console.log('ID du département :', this.id);
+
     let tempDirection: Direction;
     if (localStorage.getItem('isRtl') === 'true') {
       tempDirection = 'rtl';

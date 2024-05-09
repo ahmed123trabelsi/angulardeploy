@@ -36,7 +36,7 @@ export class DeleteComponent {
     this.dialogRef.close();
   }
  async  confirmDelete():  Promise<void> {
-    console.log(this.data.id);
+
    await  this.MissionService.deleteMission(this.data.id).subscribe();
   }
 

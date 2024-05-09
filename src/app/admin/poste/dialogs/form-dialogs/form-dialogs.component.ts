@@ -68,11 +68,9 @@ export class FormDialogComponent implements OnInit {
       Workshour: ['', Validators.required]
     });
   
-    console.log('Data:', this.data); // Voir ce que contient this.data
   
     if (this.data  && this.data.action === 'EDIT') {
-      console.log('PosteId:', this.data.PosteId);
-      console.log('Poste data:', this.data);
+ 
       this.action = 'EDIT';
       this.PosteId = this.data.PosteId;
       this.initializeFormWithPostData(this.data.poste);
@@ -88,30 +86,30 @@ export class FormDialogComponent implements OnInit {
   savePoste(): any {
     if (this.PosteForm.valid) {
       const postData: Poste = this.PosteForm.value;
-      console.log('Data to save:', postData);
+   
 
       if (this.action === 'ADD') {
         this.PosteService.createPost(postData).subscribe(
           (response) => {
-            console.log('Poste created:', response);
+         
             this.PosteForm.reset();
             this.posteAdded.emit();
             this.dialogRef.close(response);
           },
           (error) => {
-            console.error('Error creating Poste:', error);
+         
           }
         );
       } else if (this.action === 'EDIT') {
-        console.log('Data to send for update:', postData);
+      
         this.PosteService.updatePoste(this.PosteId, postData).subscribe(
           (response) => {
-            console.log('Poste updated successfully:', response);
+     
             this.posteAdded.emit();
             this.dialogRef.close(response);
           },
           (error) => {
-            console.error('Error updating Poste:', error);
+     
           }
         );
       }
@@ -121,7 +119,7 @@ export class FormDialogComponent implements OnInit {
   }
 
   initializeFormWithPostData(post: Poste): void {
-    console.log('Initializing form with post data:', post);
+ 
     this.PosteForm.patchValue({
       PostName: post.PostName,
       BasicSalary: post.BasicSalary,
